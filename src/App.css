@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+h1 {
+  color: azure;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-size: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.layout {
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar ul {
+  height: 100%;
+}
+
+.ant-menu-item-selected {
+  font-weight: bold;
+}
+
+.workspace {
+  overflow: auto;
+}
+
+.requests,
+.dashboard {
+  padding: 24px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 12px;
+}
+
+table {
+  margin-top: 24px;
+}
+
+table tr:hover {
+  cursor: pointer;
+}
+
+thead tr:hover {cursor: default;}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  min-height: 100%;
+}
+
+.card-wrapper {
+  margin: 24px 24px 0;
+}
+
+.category,
+.side-panel {
+  background-color: #fafafa;
+  border: 1px solid #cbcbcb;
+  padding: 8px;
+  margin: 8px 0;
+}
+
+.form-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.form-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.side-panel {
+  grid-area: 1 / 2;
+  background-color: #d6d6d670;
+  margin: 0;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label {
+  display: block;
+  margin: 8px 0px 4px;
+}
+
+button {
+  margin: 8px 8px 0 0;
+  width: 80px;
+}
+
+.horizontal-divider {
+  height: 1px;
+  margin: 10px 0;
+  background-color: #cbcbcb;
+}
+
+button.ant-btn-link {
+  padding: 0;
+  width: auto;
+  margin: 4px;
+  height: auto;
 }
