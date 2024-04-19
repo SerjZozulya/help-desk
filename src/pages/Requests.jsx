@@ -1,4 +1,4 @@
-import { Input, Pagination, Table } from "antd";
+import { Input, Table } from "antd";
 import React, { useContext, useState } from "react";
 import { columns } from "../utils/consts/columns";
 import { dataContext } from "../App";
@@ -31,9 +31,7 @@ export default function Requests() {
         dataSource={filteredData}
         onRow={(record, rowIndex) => {
           return {
-            onClick: (event) => {
-              navigate(String(record.key));
-            }, // click row
+            onClick: (event) => {navigate(String(record.key));}, // click row
           };
         }}
         pagination={{
