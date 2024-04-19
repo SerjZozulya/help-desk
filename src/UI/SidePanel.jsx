@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import dayjs from 'dayjs'
 import { Button, Input } from 'antd'
 
-export default function SidePanel(applicant, asignee, created) {
+export default function SidePanel({applicant, executor, created}) {
+  console.log(executor)
   return (
     <div className="side-panel">
         <div className="form-row">
@@ -21,8 +22,8 @@ export default function SidePanel(applicant, asignee, created) {
           </span>
         </div>
         <div className="horizontal-divider" />
-        <h3 className="form-row">Asignee:</h3>
-        <Input value={asignee.name} />
+        <h3 className="form-row">Executor:</h3>
+        <Input value={executor.name} />
         <Button type="link">Asign me</Button>
       </div>
   )

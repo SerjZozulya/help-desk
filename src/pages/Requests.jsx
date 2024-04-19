@@ -10,7 +10,6 @@ export default function Requests() {
   const data = useContext(dataContext);
 
   const [filter, setFilter] = useState("");
-
   const filteredData = useFilter(data, filter);
 
   return (

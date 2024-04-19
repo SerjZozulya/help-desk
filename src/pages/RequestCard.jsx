@@ -4,9 +4,9 @@ import { useContext } from "react";
 import { dataContext } from "../App";
 import { Button, DatePicker, Input, Select } from "antd";
 import dayjs from "dayjs";
-import s from "./card.module.css"
+import s from "./card.module.css";
 import SidePanel from "../UI/SidePanel";
-import Comment from "../UI/Comment"
+import Comment from "../UI/Comment";
 
 export default function RequestCard() {
   const params = useParams();
@@ -25,11 +25,9 @@ export default function RequestCard() {
       { value: "5", label: "5" },
     ];
 
-    console.log(card.comments)
+  const comments = card.comments.map((item) => <Comment comment={item} />);
 
-  const comments = card.comments.map((item) => 
-    (<Comment comment = {item}/>)
-  )
+  console.log(card.executor);
 
   return (
     <div className={s.card}>
@@ -95,7 +93,11 @@ export default function RequestCard() {
           {comments}
         </div>
       </div>
-      <SidePanel applicant={card.applicant} asignee={card.asignee} created={card.created}/>
+      <SidePanel
+        applicant={card.applicant}
+        executor={card.executor}
+        created={card.created}
+      />
     </div>
   );
 }

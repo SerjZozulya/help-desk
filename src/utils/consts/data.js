@@ -34,7 +34,7 @@ for (let i = 0; i <= 100; i++) {
     priority: faker.number.int({ min: 1, max: 5 }),
     applicant: faker.helpers.arrayElement(users),
     deadline: faker.date.soon({days: 5}),
-    asignee: faker.helpers.arrayElement(users),
+    executor: faker.helpers.arrayElement(users),
     description: faker.lorem.text(),
     created: faker.date.recent(),
     comments: generateComments()

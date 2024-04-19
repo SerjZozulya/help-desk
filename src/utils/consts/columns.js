@@ -57,9 +57,9 @@ export const columns = [
       render: (deadline) => (dayjs(deadline).format('MMMM DD - HH:mm'))
     },
     {
-      title: 'Asignee',
-      key: 'asignee',
-      dataIndex: 'asignee',
+      title: 'Executor',
+      key: 'executor',
+      dataIndex: 'executor',
       render: (user) => (user.name)
     },
     {
