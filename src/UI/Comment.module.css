@@ -1,0 +1,11 @@
+.comment {
+    border: solid 1px #b7b7b7;
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    border-radius: 4px;
+}
+
+.comment_header {
+    display: flex;
+    gap: 4px;
+}

@@ -1,28 +1,45 @@
-import { Table } from "antd";
-import React, { useContext } from "react";
+import { Input, Pagination, Table } from "antd";
+import React, { useContext, useState } from "react";
 import { columns } from "../utils/consts/columns";
 import { dataContext } from "../App";
 import { useNavigate } from "react-router-dom";
+import { useFilter } from "../utils/hooks/useFilter";
 
 export default function Requests() {
+  const navigate = useNavigate();
+  const data = useContext(dataContext);
 
-  const navigate = useNavigate()
+  const [filter, setFilter] = useState("");
 
-  const data = useContext(dataContext)
+  const filteredData = useFilter(data, filter);
+
   return (
     <div className="requests">
-      <h2>Help requests. Total: {data.length}</h2>
-      <Table 
+      <div className="toolbar">
+        <h2>Help requests. Total: {data.length}</h2>
+        <Input.Search
+          style={{ width: 300 }}
+          placeholder="Search"
+          onChange={(e) => {
+            setFilter(e.target.value);
+          }}
+        />
+      </div>
+
+      <Table
         columns={columns}
-        dataSource={data}
+        dataSource={filteredData}
         onRow={(record, rowIndex) => {
           return {
-            onClick: (event) => {navigate(String(record.key))}, // click row
+            onClick: (event) => {
+              navigate(String(record.key));
+            }, // click row
           };
         }}
         pagination={{
-          position: ['topRight', 'bottomRight']
+          position: ["bottomRight"],
         }}
+        scroll={{ y: 640, x: 1200 }}
       />
     </div>
   );

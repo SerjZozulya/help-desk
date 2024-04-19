@@ -1,15 +1,15 @@
-import {  RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import router from './components/appRouter'
+import router from "./components/appRouter";
 import { data } from "./utils/consts/data";
-import { createContext, useContext } from "react";
+import { createContext } from "react";
 
-export const dataContext = createContext(null)
+export const dataContext = createContext(null);
 
 function App() {
   return (
     <dataContext.Provider value={data}>
-          <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </dataContext.Provider>
   );
 }

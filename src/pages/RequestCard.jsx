@@ -1,30 +1,39 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { dataContext } from "../App";
 import { Button, DatePicker, Input, Select } from "antd";
 import dayjs from "dayjs";
+import s from "./card.module.css"
+import SidePanel from "../UI/SidePanel";
+import Comment from "../UI/Comment"
 
 export default function RequestCard() {
   const params = useParams();
   const data = useContext(dataContext);
   const card = data.find((item) => item.key == params.id);
   const statusOptions = [
-    { value: "OPEN", label: "OPEN" },
-    { value: "IN PROGRESS", label: "IN PROGRESS" },
-    { value: "DONE", label: "DONE" },
-  ],
-  priorityOptions = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" },
-    { value: "5", label: "5" },
-  ]
+      { value: "OPEN", label: "OPEN" },
+      { value: "IN PROGRESS", label: "IN PROGRESS" },
+      { value: "DONE", label: "DONE" },
+    ],
+    priorityOptions = [
+      { value: "1", label: "1" },
+      { value: "2", label: "2" },
+      { value: "3", label: "3" },
+      { value: "4", label: "4" },
+      { value: "5", label: "5" },
+    ];
+
+    console.log(card.comments)
+
+  const comments = card.comments.map((item) => 
+    (<Comment comment = {item}/>)
+  )
 
   return (
-    <div className="card">
-      <div className="card-wrapper">
+    <div className={s.card}>
+      <div className={s.card_wrapper}>
         <span className="card-header">
           <h2>
             {params.id}. {card.name}
@@ -81,27 +90,12 @@ export default function RequestCard() {
             <Button type="primary">Send</Button>
           </form>
         </div>
+        <div className="category">
+          <h5>Comments:</h5>
+          {comments}
+        </div>
       </div>
-      <div className="side-panel">
-        <div className="form-row">
-          <h3>Applicant: </h3>
-          <Link className="applicant">{card.applicant}</Link>
-        </div>
-        <div className="form-row">
-          <h3>Department: </h3>
-          <Link className="department"></Link>
-        </div>
-        <div className="form-row">
-          <h3>Created: </h3>
-          <span className="created">
-            {dayjs(card.created).format("DD MMM YYYY - HH:mm")}
-          </span>
-        </div>
-        <div className="horizontal-divider" />
-        <h3 className="form-row">Asignee:</h3>
-        <Input value={card.asignee} />
-        <Button type="link">Asign me</Button>
-      </div>
+      <SidePanel applicant={card.applicant} asignee={card.asignee} created={card.created}/>
     </div>
   );
 }

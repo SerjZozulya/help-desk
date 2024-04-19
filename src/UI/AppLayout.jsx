@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Outlet, redirect, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Layout, Menu } from "antd";
 import { PieChartOutlined, UserOutlined } from "@ant-design/icons";
+import s from "./Layout.module.css"
 
 const { Header, Content, Sider } = Layout;
 
@@ -17,22 +18,23 @@ export default function AppLayout() {
     navigate(key)
   }
 
+  const menuItems = [
+    { key: '/dashboard', icon: React.createElement(PieChartOutlined), label: "Dashboard" },
+    { key: '/requests', icon: React.createElement(UserOutlined), label: "Requests" },
+  ]
+
 
   return (
-    <Layout className="layout">
+    <Layout className={s.layout}>
       <Header>
         <h1>HelpDesk</h1>
       </Header>
       <Content>
-        <Layout className="layout">
-          <Sider className="sidebar">
+        <Layout className={s.layout}>
+          <Sider className={s.sidebar}>
             <Menu
-            selectedKeys={keys}
-              items={[
-                { key: '/dashboard', icon: React.createElement(PieChartOutlined), label: "Dashboard" },
-                { key: '/requests', icon: React.createElement(UserOutlined), label: "Requests" },
-              ]}
-
+              selectedKeys={keys}
+              items={menuItems}
               onClick={(e) => {clickHandler(e.key)}}
             ></Menu>
           </Sider>

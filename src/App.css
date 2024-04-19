@@ -10,23 +10,6 @@ h3 {
   font-size: 16px;
 }
 
-.layout {
-  height: 100%;
-  overflow: hidden;
-}
-
-.sidebar ul {
-  height: 100%;
-}
-
-.ant-menu-item-selected {
-  font-weight: bold;
-}
-
-.workspace {
-  overflow: auto;
-}
-
 .requests,
 .dashboard {
   padding: 24px;
@@ -39,7 +22,7 @@ h3 {
   gap: 12px;
 }
 
-table {
+.ant-table-header {
   margin-top: 24px;
 }
 
@@ -47,16 +30,8 @@ table tr:hover {
   cursor: pointer;
 }
 
-thead tr:hover {cursor: default;}
-
-.card {
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  min-height: 100%;
-}
-
-.card-wrapper {
-  margin: 24px 24px 0;
+thead tr:hover {
+  cursor: default;
 }
 
 .category,
@@ -65,6 +40,7 @@ thead tr:hover {cursor: default;}
   border: 1px solid #cbcbcb;
   padding: 8px;
   margin: 8px 0;
+  border-radius: 4px;
 }
 
 .form-row {
@@ -91,7 +67,7 @@ label {
   margin: 8px 0px 4px;
 }
 
-button {
+button.ant-btn:not(.ant-input-search-button) {
   margin: 8px 8px 0 0;
   width: 80px;
 }
@@ -107,4 +83,9 @@ button.ant-btn-link {
   width: auto;
   margin: 4px;
   height: auto;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
 }

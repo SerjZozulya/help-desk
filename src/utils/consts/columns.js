@@ -11,6 +11,8 @@ export const columns = [
       title: "Status",
       dataIndex: "status",
       key: "status",
+      width: 120,
+      align: 'center',
       render: (_, { status }) => (
         <Tag
           color={
@@ -24,6 +26,7 @@ export const columns = [
         >
           {status.toUpperCase()}
         </Tag>
+        
       ),
     },
     {
@@ -31,16 +34,20 @@ export const columns = [
       dataIndex: "priority",
       key: "priority",
       sorter: (a, b) => a.priority - b.priority,
+      width: 120,
+      align: 'center'
     },
     {
       title: "Name",
       key: "name",
       dataIndex: "name",
+      width: 500
     },
     {
       title: "Applicant",
       key: "applicant",
       dataIndex: "applicant",
+      render: (user) => (user.name)
     },
     {
       title: "Deadline",
@@ -52,7 +59,8 @@ export const columns = [
     {
       title: 'Asignee',
       key: 'asignee',
-      dataIndex: 'asignee'
+      dataIndex: 'asignee',
+      render: (user) => (user.name)
     },
     {
       title: 'Created',

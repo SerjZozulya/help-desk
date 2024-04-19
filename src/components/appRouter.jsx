@@ -10,31 +10,11 @@ const router = createBrowserRouter([
       path: "/",
       element: <AppLayout/>,
       children: [
-        {
-          path: "dashboard",
-          element: <Dashboard/>
-        },
-  
-        {
-          path: "requests",
-          element: <Requests/>
-        },
-
-        {
-          path: "requests/:id",
-          element: <RequestCard/>
-        },
-  
-        {
-          path: "*",
-          element: <Navigate to="dashboard"/>,
-
-        },
-
-        {
-            path: "/",
-            element: <Navigate to="dashboard"/>,
-        }
+        {path: "dashboard", element: <Dashboard/>},
+        {path: "requests",  element: <Requests/>},
+        {path: "requests/:id", element: <RequestCard/>},
+        {path: "*", element: <Navigate to="dashboard"/>},
+        {path: "/", element: <Navigate to="dashboard"/>}
       ]
     }
   ])

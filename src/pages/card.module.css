@@ -1,0 +1,12 @@
+.card {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    height: 100%;
+  }
+  
+  .card_wrapper {
+    margin: 24px 24px 0;
+    overflow: auto;
+  }
+
+  .card_wrapper::-webkit-scrollbar {width: 0;}
