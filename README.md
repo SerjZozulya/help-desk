@@ -21,6 +21,8 @@
 3. Запустить проект: > `npm start`
 4. Перейти на `localhost:3000`
 
+![image info](https://sun9-68.userapi.com/impg/XHw3VF1PRXQESEdNrQOdPrE8G2qm2Yt7JP5CvQ/MewfVZRgiX4.jpg?size=1920x1040&quality=96&sign=bc6afe022fa79010a249a7dd363665a4&type=album)
+![image info](https://sun9-36.userapi.com/impg/f4KL3oBBaX0IDFBt_BPrgV8puGeJ_eiNxJtgAw/BmE8hjiRbCA.jpg?size=1920x1040&quality=96&sign=dd89766e89e92b8a639b2b1771e3b87e&type=album)
 ##### Пояснение решения:
 1. Сделал help-desk из 3 страниц - dashboard c с графиками  по работе help desk, requests c таблицей заявок, request card с карточкой отдельно взятой заявки
 2. Использовал ant design для ui элементов (таблица, кнопки, инпуты, графики)
